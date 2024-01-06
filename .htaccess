@@ -21,6 +21,7 @@ RewriteRule ^accueil$ index.php [L]
 RewriteRule ^apropos$ about.php [L]
 RewriteRule ^services$ services.php [L]
 RewriteRule ^blog$ blog.php [L]
+RewriteRule ^technologie$ technologie.php [L]
 RewriteRule ^packs$ price.php [L]
 RewriteRule ^contact$ contact.php [L]
 

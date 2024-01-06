@@ -52,10 +52,10 @@
                     <div class="col-12 wow slideInUp" data-wow-delay="0.1s">
                         <nav aria-label="Page navigation">
                           <ul class="pagination pagination-lg m-0">
-                            <li class="page-item active"><a class="page-link" href="logiciel_de_controle.html">1</a></li>
-                            <li class="page-item"><a class="page-link" href="logiciel_de_controle2.html">2</a></li>
+                            <li class="page-item active"><a class="page-link" href="blog">1</a></li>
+                            <li class="page-item"><a class="page-link" href="technologie">2</a></li>
                             <li class="page-item">
-                              <a class="page-link rounded-0" href="logiciel_de_controle2.html" aria-label="Next">
+                              <a class="page-link rounded-0" href="technologie" aria-label="Next">
                                 <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
                               </a>
                             </li>
