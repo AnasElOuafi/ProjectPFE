@@ -1,0 +1,27 @@
+# .htaccess
+# Author: Anas
+# Created: 2023
+# Last updated: 2023-11-18
+# Project: SuciriSat
+
+# disable directory listing
+Options -Indexes
+
+# setting security
+Options +FollowSymlinks
+
+# Enable the Rewrite Engine
+RewriteEngine On
+
+# Set PHP display_errors to on
+php_flag display_errors on
+
+# Define a default handler
+RewriteRule ^accueil$ index.php [L]
+RewriteRule ^apropos$ about.php [L]
+RewriteRule ^services$ services.php [L]
+RewriteRule ^blog$ blog.php [L]
+RewriteRule ^packs$ price.php [L]
+RewriteRule ^contact$ contact.php [L]
+
+RewriteRule ^blog-details-([0-9]+)$ detail.php?id_blog=$1 [L]
