@@ -33,5 +33,17 @@ class CompteController
             return false;
         }
     }
+
+    public function connectUser($id, $name, $email, $GroupID, $date)
+    {
+        $query = mysqli_query($this->db, "SELECT * FROM `users` WHERE `id` = '{$id}', `name` = '{$name}', `email` ='{$email}', `GroupID` = '{$GroupID}', `date` = '{$date}' AND `password` ='{$password}'");
+        $result = mysqli_fetch_assoc($query);
+        if ($query) {
+            return $result;
+        } else {
+            return false;
+        }
+
+    }
 }
 ?>
