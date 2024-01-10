@@ -1,5 +1,12 @@
 <?php
     require_once 'includes/routes.php' ;
+    
+$lang = "";
+// If $lang is empty so we start the traitment bellow
+if (empty($lang)) {
+    // Get the user's preferred language from their browser
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+}
 ?>
 <head>
     <meta charset="utf-8">
