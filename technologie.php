@@ -59,38 +59,183 @@
                 <!-- Comment List Start -->
                 <div class="mb-5">
                     <h2 class="mb-4">Commentaires</h2>
-                    <div class="d-flex mb-4">
-                        <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
-                        <div class="ps-3">
-                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
-                            <button class="btn btn-sm btn-light">Reply</button>
+                    <div class="mb-5">
+                    <?php
+                    // Fetch comments from the database
+                    $host = "localhost";
+                    $usernameDB = "root";
+                    $passwordDB = "";
+                    $database = "securisat";
+
+                    $conn = new mysqli($host, $usernameDB, $passwordDB, $database);
+
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+
+                    $sql = "SELECT username, comment, comment FROM comment ORDER BY comment DESC";
+                    $result = $conn->query($sql);
+
+                    if (!$result) {
+                        die("Error executing query: " . $conn->error);
+                    }
+
+                    while ($comment = $result->fetch_assoc()) :
+                    ?>
+                        <div class="d-flex mb-4">
+                            <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                            <div class="ps-3">
+                                <h6><a href=""><?= $comment['username'] ?></a> <small><i><?= $comment['comment'] ?></i></small></h6>
+                                <p><?= $comment['comment'] ?></p>
+                                <button class="btn btn-sm btn-light">Reply</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
-                        <div class="ps-3">
-                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
-                            <button class="btn btn-sm btn-light">Reply</button>
-                        </div>
-                    </div>
-                    <div class="d-flex ms-5 mb-4">
-                        <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
-                        <div class="ps-3">
-                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
-                            <button class="btn btn-sm btn-light">Reply</button>
-                        </div>
-                    </div>
+                    <?php endwhile; ?>
+
+                    <?php
+                    // Close the database connection
+                    $conn->close();
+                    ?>
                 </div>
-                <!-- Comment List End -->
+
+                                </div>
+                                <!-- Comment List End -->
+
+
+
+                <?php
+                function userExists($conn, $username, $email) {
+                    $username = $conn->real_escape_string($username);
+                    $email = $conn->real_escape_string($email);
+
+                    $query = "SELECT * FROM comment WHERE username='$username' OR email='$email'";
+                    $result = $conn->query($query);
+
+                    return $result->num_rows > 0;
+                }
+
+                function addCommentForUser($username, $email, $password, $commentText) {
+                    $host = "localhost";
+                    $usernameDB = "root";
+                    $passwordDB = "";
+                    $database = "securisat";
+
+                    $conn = new mysqli($host, $usernameDB, $passwordDB, $database);
+
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+
+                    $username = $conn->real_escape_string($username);
+                    $email = $conn->real_escape_string($email);
+                    $password = $conn->real_escape_string($password);
+                    $commentText = $conn->real_escape_string($commentText);
+
+                    // Check if the user already exists
+                    if (!userExists($conn, $username, $email)) {
+                        // Insert the comment into the "user" table
+                        $sql = "INSERT INTO comment (username, email, password, comment) VALUES ('$username', '$email', '$password', '$commentText')";
+
+                        if ($conn->query($sql) === TRUE) {
+                            echo "Comment added successfully.";
+                        } else {
+                            echo "Error: " . $sql . "<br>" . $conn->error;
+                        }
+                    } else {
+                        echo "User already exists. Comment not added.";
+                    }
+
+                    $conn->close();
+                }
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $username = $_POST["username"];
+                    $email = $_POST["email"];
+                    $password = $_POST["password"];
+                    $commentText = $_POST["comment"];
+
+                    addCommentForUser($username, $email, $password, $commentText);
+                }
+                ?>
+
+
+                <!-- HTML form -->
+                <div class="bg-light rounded p-5">
+                    <h2 class="mb-4">Laissez votre commentaire</h2>
+                    <form method="post" action="">
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text" name="username" class="form-control bg-white border-0" placeholder="Votre Nom et Prenom" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="email" name="email" class="form-control bg-white border-0" placeholder="Votre E-mail" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="password" name="password" class="form-control bg-white border-0" placeholder="Mot De Passe" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <textarea name="comment" class="form-control bg-white border-0" rows="5" placeholder="Commentaire"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 py-3">Laissez votre commentaire</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <!-- Comment Form Start -->
-                <div class="bg-light rounded p-5">
+                <!-- <div class="bg-light rounded p-5">
                     <h2 class="mb-4">Laissez votre commentaire</h2>
                     <form>
                         <div class="row g-3">
@@ -111,7 +256,7 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <!-- Comment Form End -->
             </div>
 
