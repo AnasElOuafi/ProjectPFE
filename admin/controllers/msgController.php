@@ -42,14 +42,11 @@ class MessageController
          return $table;
      }
       // Update method
-      public function update($icon, $name, $description, $id)
+      public function update($username, $email ,$comment, $id)
       {
-          // addslashes is a method to clean the text written by the user
-          $name = addslashes($name);
-          $description = addslashes($description);
           
           // Start request SQL to update service by Id
-          $query = mysqli_query($this->db, "UPDATE `comment` SET `username `='$username ', `email`='$email', `password`='$password', `comment`='$comment' WHERE `id`='$userID '");
+          $query = mysqli_query($this->db, "UPDATE `comment` SET `username`='$username',`email`='$email',`comment`='$comment' WHERE `userID`='$id'");
           
           // Test on $query if it ran successfully or not to return the right boolean value
           if ($query) {
@@ -60,10 +57,10 @@ class MessageController
       }
       
        // Delete method
-     public function delete($id)
+     public function delete($userID)
      {
          // Start requet sql to delete studient by Id
-         $query = mysqli_query($this->db, "DELETE FROM `comment` WHERE `id`='$userID'");
+         $query = mysqli_query($this->db, "DELETE FROM `comment` WHERE `userID`='$userID'");
          // Test on $query if it is run success or not to return the right boolean value
          if ($query) {
              return true;
