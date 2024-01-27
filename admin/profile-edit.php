@@ -1,5 +1,5 @@
 <?php
-$title='';
+$title='Détailes Profile';
 $css='';
 require_once 'layouts/_head.php';
 ?>

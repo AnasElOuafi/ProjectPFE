@@ -1,5 +1,5 @@
 <?php
-$title='';
+$title='Blog';
 $css='';
 require_once 'layouts/_head.php';
 ?>

@@ -1,12 +1,5 @@
 <?php
     require_once 'includes/routes.php' ;
-    
-$lang = "";
-// If $lang is empty so we start the traitment bellow
-if (empty($lang)) {
-    // Get the user's preferred language from their browser
-    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-}
 ?>
 <head>
     <meta charset="utf-8">
@@ -21,6 +14,7 @@ if (empty($lang)) {
     <link href="assets/css/customer.css" rel="stylesheet" />
     <link href="assets/css/headers.css" rel="stylesheet" />
     <title><?= $title ; ?></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <?php
     session_start();
 

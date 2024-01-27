@@ -1,5 +1,5 @@
 <?php
-$title='Packs';
+$title='Packs des prix';
 $css='';
 require_once 'layouts/_head.php';
 ?>

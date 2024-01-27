@@ -5,9 +5,9 @@
                <div class="col-lg-4 col-md-6">
                     <h3 class="text-white mb-4">Liens les plus consultés</h3>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>À propos de nous</a>
-                        <a class="text-light mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Notre Services</a>
-                        <a class="text-light" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contactez-nous</a>
+                        <a class="text-light mb-2" href="apropos"><i class="bi bi-arrow-right text-primary me-2"></i>À propos de nous</a>
+                        <a class="text-light mb-2" href="services"><i class="bi bi-arrow-right text-primary me-2"></i>Notre Services</a>
+                        <a class="text-light" href="contact"><i class="bi bi-arrow-right text-primary me-2"></i>Contactez-nous</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -43,7 +43,7 @@
                         <p class="mb-md-0">&copy; <a class="text-white border-bottom" href="#">SecuriSat</a>. All Rights Reserved.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <p class="mb-0">Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">El Ouafi Anas</a></p>
+                        <p class="mb-0">Designed by <a class="text-white border-bottom" href="https://www.linkedin.com/in/el-ouafi-anas-46366a280/">El Ouafi Anas</a></p>
                     </div>
                 </div>
             </div>

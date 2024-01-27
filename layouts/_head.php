@@ -1,3 +1,6 @@
+<?php
+    require_once 'includes/routes.php' ;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
