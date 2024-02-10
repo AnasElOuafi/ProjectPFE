@@ -5,12 +5,12 @@ require_once 'layouts/_head.php';
 ?>
 
 
-<body>
+<body class="container">
     <?php
     require_once 'layouts/_nav.php';
     ?>
 
-    <h3><?= $title ; ?> <a href="boit-Mail" class="btn btn-outline-primary"><i class="fa fa-refresh"></i> Acctualiser</a></h3>
+    <h3><?= $title; ?> <a href="boit-Mail" class="btn btn-outline-primary"><i class="fa fa-refresh"></i> Acctualiser</a></h3>
     <?php
     // Messages
     $success = '<div class="alert alert-success" role="alert">Opération terminée avec <strong>succès</strong></div>';
@@ -40,26 +40,29 @@ require_once 'layouts/_head.php';
         <tbody>
             <?php
             $AllMails = $MessageController->read();
-            if (!empty($AllMails)){
-            foreach ($AllMails as $i => $Mail) :
+            if (!empty($AllMails)) {
+                foreach ($AllMails as $i => $Mail) :
             ?>
 
-                <tr>
-                    <td><?= $Mail['id']; ?></td>
-                    <td><?= $Mail['name']; ?></td>
-                    <td><?= $Mail['email']; ?></td>
-                    <td><?= $Mail['object']; ?></td>
-                    <td><?= $Mail['date']; ?></td>
-                    <td>
-                        <form method="post">
-                            <a href="msg-<?= $Mail['id']; ?>" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-                            <?php if ($Mail['etat'] == 0) { ?><button type="submit" name="marqueCommeLu" value="<?= $Mail['id']; ?>" class="btn btn-success"><i class="fa fa-check"></i></button><?php } ?>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete<?= $Mail["id"]; ?>"><i class="fa fa-trash"></i></button>
-                        </form>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><?= $Mail['id']; ?></td>
+                        <td><?= $Mail['name']; ?></td>
+                        <td><?= $Mail['email']; ?></td>
+                        <td><?= $Mail['object']; ?></td>
+                        <td><?= $Mail['date']; ?></td>
+                        <td>
+                            <form method="post">
+                                <a href="msg-<?= $Mail['id']; ?>" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                                <?php if ($Mail['etat'] == 0) { ?><button type="submit" name="marqueCommeLu" value="<?= $Mail['id']; ?>" class="btn btn-success"><i class="fa fa-check"></i></button><?php } ?>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete<?= $Mail["id"]; ?>"><i class="fa fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
 
-            <?php endforeach;}else{ echo '<tr><td colspan="6" class="text-center align-middle">No data to show</td></tr>' ;} ?>
+            <?php endforeach;
+            } else {
+                echo '<tr><td colspan="6" class="text-center align-middle">No data to show</td></tr>';
+            } ?>
         </tbody>
         <tfoot>
             <tr>

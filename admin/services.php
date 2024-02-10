@@ -5,7 +5,7 @@ require_once 'layouts/_head.php';
 ?>
 
 
-<body>
+<body class="container">
     <?php
     require_once 'layouts/_nav.php';
     ?>
