@@ -36,6 +36,7 @@ require_once 'layouts/_head.php';
                 <th scope="col">#</th>
                 <th scope="col">titre</th>
                 <th scope="col">prix</th>
+                <th scope="col">period</th>
                 <th scope="col">line1</th>
                 <th scope="col">line2</th>
                 <th scope="col">line3</th>
@@ -55,6 +56,7 @@ require_once 'layouts/_head.php';
                         <td><?= $packs['id']; ?></td>
                         <td><?= $packs['titre']; ?></td>
                         <td><?= $packs['prix']; ?></td>
+                        <td><?= $packs['period']; ?></td>
                         <td><?= $packs['line1']; ?></td>
                         <td><?= isset($packs['line2']) ? $packs['line2'] : ''; ?></td>
                         <td><?= isset($packs['line3']) ? $packs['line3'] : ''; ?></td>
@@ -78,6 +80,7 @@ require_once 'layouts/_head.php';
                 <th scope="col">#</th>
                 <th scope="col">titre</th>
                 <th scope="col">prix</th>
+                <th scope="col">period</th>
                 <th scope="col">line1</th>
                 <th scope="col">line2</th>
                 <th scope="col">line3</th>

@@ -74,3 +74,54 @@
   .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
   }
+
+  .home-stats .stat{
+    padding: 20px;
+    font-size: 15px;
+    color: #FFF;
+    border-radius: 10px;
+}
+.home-stats .stat a{
+    color: #FFF;
+    text-decoration: none;
+}
+.home-stats .stat span{
+    display: block;
+    font-size: 50px;
+}
+.home-stats .st-members{
+    background-color: #040D12;
+}
+.home-stats .st-pending{
+    background-color: #183D3D;
+}
+.home-stats .st-items{
+    background-color: #5C8374;
+}
+.home-stats .st-comments{
+    background-color: #93B1A6;
+}
+.latest{
+    margin-top: 30px;
+}
+.latest_users{
+    margin-bottom: 0;
+}
+.latest_users li{
+    padding:5px 0;
+    overflow: hidden;
+}
+.latest_users li:nth-child(odd){
+    background-color: #EEE;
+}
+
+.latest_users .btn-success,
+.latest_users .btn-info{
+    padding: 3px 7px;
+}
+.latest_users .btn-info{
+    margin-right: 7px;
+}
+.latest .card-body{
+    padding: 0;
+}
