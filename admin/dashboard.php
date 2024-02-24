@@ -15,56 +15,26 @@ require_once 'layouts/_head.php';
         <div class="row">
             <div class="col-md-3">
                 <div class="stat st-members">
-                    Total Members
-                    <span><a href="#">1450</a></span>
+                    Total services
+                    <span><a href="service"><?= $ServiceController->count() ?></a></span>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat st-pending">
-                    Pending Members
-                    <span><a href="#">800</a></span>
+                    Pending blog
+                    <span><a href="#"><a href="blog"><?= $BlogController->count() ?></a></span>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat st-items">
-                    Total Items
-                    <span>1500</span>
+                    Total Msg
+                    <span><a href="#"><a href="boit-Mail"><?= $MessageController->count() ?></a></span>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat st-comments">
-                    Total Comments
-                    <span><a href="<?= $Mail['id']; ?>"></a></span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container latest">
-        <div class="row">
-            <!-- Column for Registered Users -->
-            <div class="card col-sm-6">
-                <h5 class="card-header"><i class="bi bi-person-vcard"></i> Latest Registered Users</h5>
-                <div class="card-body">
-                    <div class="panel-body">
-                        <ul class="list-unstyled latest_users">
-
-                            <li>
-
-                                <a href="#">
-                                    <span class="btn btn-success float-right">
-                                        <i class="bi bi-pencil-square"></i> Edit </a>
-                                </span>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- Column for Latest Items -->
-            <div class="card col-sm-6">
-                <h5 class="card-header"><i class="bi bi-diagram-3"></i> Latest Items</h5>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
+                    Total Packs
+                    <span><a href="#"><a href="packs"><?= $PackController->count() ?></a></span>
                 </div>
             </div>
         </div>

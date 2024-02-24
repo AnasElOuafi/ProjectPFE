@@ -23,6 +23,18 @@ class BlogController
         return $table;
     }
 
+    public function count()
+    {
+        // Start SQL query to get count from the database
+        $query = mysqli_query($this->db, "SELECT COUNT(*) as count FROM `blog`");
+        
+        // Fetch the count value
+        $result = mysqli_fetch_assoc($query);
+    
+        // Return the count
+        return $result['count'];
+    }
+
     // Read method
     public function getServiceById($id)
     {

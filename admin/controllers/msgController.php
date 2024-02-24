@@ -24,6 +24,20 @@ class MessageController
         while ($result = mysqli_fetch_array($query)) {$table[] = $result;}
         return $table;
     }
+
+    // Count method
+    public function count()
+    {
+        // Start SQL query to get count from the database
+        $query = mysqli_query($this->db, "SELECT COUNT(*) as count FROM `contact`");
+        
+        // Fetch the count value
+        $result = mysqli_fetch_assoc($query);
+    
+        // Return the count
+        return $result['count'];
+    }
+
     // Read method
     public function getMailById($id)
     {
