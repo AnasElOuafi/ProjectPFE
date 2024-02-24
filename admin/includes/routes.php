@@ -9,6 +9,9 @@ $MessageController = new MessageController($db);
 require_once 'controllers/blogController.php' ;
 $BlogController = new BlogController($db);
 
+require_once 'controllers/CommentController.php' ;
+$CommentController = new CommentController($db);
+
 require_once 'controllers/temoiController.php' ;
 $TemoiController = new TemoiController($db);
 

@@ -10,7 +10,7 @@ require_once 'layouts/_head.php';
     require_once 'layouts/_nav.php';
     ?>
 
-    <h3><?= $title; ?> <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ajouter"><i class="fa fa-plus"></i> Ajouter</button> <a href="service" class="btn btn-outline-primary"><i class="fa fa-refresh"></i> Acctualiser</a></h3>
+    <h3><?= $title; ?> <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ajouter"><i class="fa fa-plus"></i> Ajouter</button> <a href="service" class="btn btn-outline-primary"><i class="fa fa-refresh"></i> Actualiser</a></h3>
     <?php
     // Messages
     $success = '<div class="alert alert-success" role="alert">Opération terminée avec <strong>succès</strong></div>';
@@ -85,7 +85,6 @@ require_once 'layouts/_head.php';
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form method="post">
                                 <div class="mb-3">
                                     <label class="col-form-label">Icon(*) :</label>
                                     <input type="text" class="form-control" name="icon" required>
@@ -121,7 +120,6 @@ require_once 'layouts/_head.php';
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form method="post">
                                 <div class="mb-3">
                                     <label class="col-form-label">Icon(*) :</label>
                                     <input type="text" class="form-control" name="icon" value="<?= $Service["icon"]; ?>" placeholder="<?= $Service["icon"]; ?>" required>
@@ -153,7 +151,7 @@ require_once 'layouts/_head.php';
                     </div>
                     <form action="" method="POST">
                         <div class="modal-body">
-                            <p class="mb-3">Voulez vous supprimer ce message ?</p>
+                            <p class="mb-3">Voulez vous supprimer ce Service ?</p>
                         </div>
                         <div class="modal-footer">
                             <button type="submit" name="delete" value="<?= $Service["id"]; ?>" class="btn btn-outline-success">Oui</button>

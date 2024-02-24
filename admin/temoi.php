@@ -88,7 +88,6 @@ require_once 'layouts/_head.php';
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form method="post">
                             <div class="mb-3">
                                 <label class="col-form-label">UserID(*) :</label>
                                 <input type="text" class="form-control" name="username" required>
@@ -128,7 +127,6 @@ require_once 'layouts/_head.php';
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form method="post">
                                 <div class="mb-3">
                                     <label class="col-form-label">UserID(*) :</label>
                                     <input type="text" class="form-control" name="username" value="<?= $Temoi["username"]; ?>" placeholder="<?= $Temoi["username"]; ?>" required>

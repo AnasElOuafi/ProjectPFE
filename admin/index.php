@@ -25,7 +25,7 @@ require_once 'layouts/_head.php';
                 }
             }
         ?>
-        <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+        <h1 class="h3 mb-3 fw-normal">Admin-Panel</h1>
         <div class="form-floating">
         <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
         <label for="floatingInput">Email address</label>
@@ -33,7 +33,7 @@ require_once 'layouts/_head.php';
         <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
         <label for="floatingPassword">Password</label>
         <button class="btn btn-primary w-100 py-2" name="connect" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-body-secondary">© 2023</p>
+        <p class="mt-5 mb-3 text-body-secondary">© SecuriSat. All Rights Reserved.</p>
     </form>
     </main>
 </div>

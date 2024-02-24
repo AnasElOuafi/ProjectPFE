@@ -10,7 +10,7 @@ require_once 'layouts/_head.php';
     require_once 'layouts/_nav.php';
     ?>
 
-    <h3><?= $title; ?> <a href="boit-Mail" class="btn btn-outline-primary"><i class="fa fa-refresh"></i> Acctualiser</a></h3>
+    <h3><?= $title; ?> <a href="boit-Mail" class="btn btn-outline-primary"><i class="fa fa-refresh"></i> Actualiser</a></h3>
     <?php
     // Messages
     $success = '<div class="alert alert-success" role="alert">Opération terminée avec <strong>succès</strong></div>';

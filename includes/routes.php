@@ -20,3 +20,6 @@ $PackController = new PackController($db);
 
 require_once 'admin/controllers/serviceController.php' ;
 $ServiceController = new ServiceController($db);
+
+require_once 'admin/controllers/CommentController.php' ;
+$CommentController = new CommentController($db);

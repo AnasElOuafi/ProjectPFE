@@ -29,6 +29,9 @@ RewriteRule ^msg-([0-9]+)$ msg-details.php?id_msg=$1 [L]
 # Gestion des packs
 RewriteRule ^packs$ packs.php [L]
 
+# Gestion des commentaire
+RewriteRule ^commentaire$ commentaire.php [L]
+
 # Gestion des services
 RewriteRule ^service$ services.php [L]
 

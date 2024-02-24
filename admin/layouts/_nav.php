@@ -7,12 +7,13 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="accueil" class="nav-link px-2 link-body-emphasis">Dashboard</a></li>
-          <li><a href="boit-Mail" class="nav-link px-2 link-body-emphasis">Mails</a></li>
-          <li><a href="service" class="nav-link px-2 link-body-emphasis">Services</a></li>
-          <li><a href="packs" class="nav-link px-2 link-body-emphasis">Packs</a></li>
-          <li><a href="blog" class="nav-link px-2 link-body-emphasis">Blog</a></li>
-          <li><a href="review" class="nav-link px-2 link-body-emphasis">Review</a></li>
           <li><a href="infos" class="nav-link px-2 link-body-emphasis">Infos</a></li>
+          <li><a href="service" class="nav-link px-2 link-body-emphasis">Services</a></li>
+          <li><a href="blog" class="nav-link px-2 link-body-emphasis">Blog</a></li>
+          <li><a href="packs" class="nav-link px-2 link-body-emphasis">Packs</a></li>
+          <li><a href="review" class="nav-link px-2 link-body-emphasis">Review</a></li>
+          <li><a href="commentaire" class="nav-link px-2 link-body-emphasis">Commentaires</a></li>
+          <li><a href="boit-Mail" class="nav-link px-2 link-body-emphasis">Mails</a></li>
         </ul>
 
         <div class="dropdown text-end">
