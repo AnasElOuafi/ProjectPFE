@@ -27,10 +27,10 @@
                 </div>
                     <div class="col-12">
                         <form class="mx-auto" style="max-width: 600px;">
-                            <div class="input-group">
+                          <!--   <div class="input-group">
                                 <input type="text" class="form-control border-white p-3" placeholder="Your Email">
                                 <button class="btn btn-primary px-4">Sign Up</button>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
                 </div>

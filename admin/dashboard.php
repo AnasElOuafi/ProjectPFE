@@ -15,26 +15,26 @@ require_once 'layouts/_head.php';
         <div class="row">
             <div class="col-md-3">
                 <div class="stat st-members">
-                    Total services
+                Ensemble des services
                     <span><a href="service"><?= $ServiceController->count() ?></a></span>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat st-pending">
-                    Pending blog
-                    <span><a href="#"><a href="blog"><?= $BlogController->count() ?></a></span>
+                Blog Actualise
+               <span><a href="#"><a href="blog"><?= $BlogController->count() ?></a></span>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat st-items">
-                    Total Msg
-                    <span><a href="#"><a href="boit-Mail"><?= $MessageController->count() ?></a></span>
+                Total Commentaires
+                    <span><a href="#"><a href="review"><?= $TemoiController->count() ?></a></span>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="stat st-comments">
-                    Total Packs
-                    <span><a href="#"><a href="packs"><?= $PackController->count() ?></a></span>
+                Boîte de messagerie
+                    <span><a href="#"><a href="boit-Mail"><?= $MessageController->count() ?></a></span>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 ?>
 <head>
     <meta charset="utf-8">
-    <meta name="author" content="Anas">
+    <meta name="author" content="El Ouafi Anas">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.118.2">

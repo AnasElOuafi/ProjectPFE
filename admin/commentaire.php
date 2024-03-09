@@ -1,5 +1,5 @@
 <?php
-$title = 'Commentaires';
+$title = 'Témoignage';
 $css = '';
 require_once 'layouts/_head.php';
 ?>

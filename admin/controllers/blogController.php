@@ -48,12 +48,12 @@ class BlogController
     }
 
     // Update method
-    public function update($titre, $equipements, $description, $date, $id)
+    public function update($titre, $equipements, $description, $avatar, $date, $id)
     {
         $titre = addslashes($titre);
         $equipements = addslashes($equipements);
         $description = addslashes($description);
-        $query = mysqli_query($this->db, "UPDATE `blog` SET `titre`='{$titre}',`equipements`='{$equipements}',`description`='{$description}',`date`='{$date}' WHERE `id` = '{$id}'");
+        $query = mysqli_query($this->db, "UPDATE `blog` SET `titre`='{$titre}', `equipements`='{$equipements}', `description`='{$description}', `avatar`= '{$avatar}', `date`='{$date}' WHERE `id` = '{$id}'");
         if ($query) {
             return true;
         } else {
@@ -73,12 +73,12 @@ class BlogController
     }
 
     // Create method
-    public function create($titre, $equipements, $description, $date)
+    public function create($titre, $equipements, $description, $avatar, $date)
     {
         $titre = addslashes($titre);
         $equipements = addslashes($equipements);
         $description = addslashes($description);
-        $query = mysqli_query($this->db, "INSERT INTO `blog`(`titre`, `equipements`, `description`, `date`) VALUES ('{$titre}', '{$equipements}', '{$description}', '{$date}')");
+        $query = mysqli_query($this->db, "INSERT INTO `blog`(`titre`, `equipements`, `description`, `avatar`, `date`) VALUES ('{$titre}', '{$equipements}', '{$description}', '{$avatar}', '{$date}')");
         if ($query) {
             return true;
         } else {

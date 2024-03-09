@@ -11,44 +11,23 @@
             <!-- Blog list Start -->
             <div class="col-lg-8">
                 <div class="row g-5">
+                    <?php
+                    $Allblogs = $BlogController->read();
+                    foreach ($Allblogs as $i => $blog) :
+                    ?>
                     <div class="col-12 wow slideInUp" data-wow-delay="0.1s">
                         <div class="blog-item">
                             <div class="position-relative">
-                                <img class="img-fluid w-80 rounded-top" src="media/serv1.jpg" alt="">
-                                  </div>
+                            <img class="img-fluid w-80 rounded-top" src="admin/assets/img/<?= $blog['avatar']; ?>" alt="">
+                            </div>
                             <div class="bg-primary rounded-bottom p-3">
                                
-                                <a class="h2 m-0 text-white" href="">Installation de caméras de surveillance pour renforcer la sécurité,
-                                     comprenant le positionnement stratégique des caméras et le raccordement au système d'enregistrement pour une surveillance efficace.</a>
+                                <a class="h2 m-0 text-white" href=""><?= $blog["description"]; ?></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="blog-item">
-                            <div class="position-relative">
-                                <img class="img-fluid w-80 rounded-top" src="media/serv2.jpg" alt="">
-                            </div>
-                            <div class="bg-primary rounded-bottom p-5">
-                                <a class="h2 m-0 text-white" href="">Installation d'un système d'alarme pour protéger votre domicile ou votre entreprise, impliquant la fixation des capteurs,
-                                     la connexion à l'unité de contrôle et la configuration des paramètres de sécurité.</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="blog-item">
-                            <div class="position-relative">
-                                <video autoplay loop muted plays-inline class="video" style="max-width: 720px;">
-                                    <source src="media/ver1.mp4">
-                                </video>
-                            </div>
-                            <div class="bg-primary rounded-bottom p-5">
-                        
-                                <a class="h3 m-0 text-white" href="">L'enregistreur de télésurveillance est un dispositif essentiel pour stocker les vidéos et les images capturées par les caméras de surveillance. Il permet de conserver les enregistrements pour une analyse ultérieure en cas d'incident et offre également la possibilité de visionner en temps réel les flux vidéo provenant des caméras connectées au système.
-                                 L'installation de l'enregistreur de télésurveillance comprend la connexion des caméras, le paramétrage des options d'enregistrement, ainsi que la configuration de l'accès à distance pour une surveillance à partir de tout endroit muni d'une connexion Internet.</a>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    <?php endforeach; ?>
+
                     <div class="col-12 wow slideInUp" data-wow-delay="0.1s">
                         <nav aria-label="Page navigation">
                           <ul class="pagination pagination-lg m-0">
@@ -68,25 +47,22 @@
 
             <!-- Sidebar Start -->
             <div class="col-lg-4">
-                <!-- Search Form Start -->
-                <div class="mb-5">
-                    <div class="input-group">
-                        <input type="text" class="form-control p-3" placeholder="Recherche">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-                <!-- Search Form End -->
 
                 <!-- Category Start -->
                 <div class="mb-5">
                     <h2 class="mb-4">Categories</h2>
+                    <?php
+                    $Allblogs = $BlogController->read();
+                    foreach ($Allblogs as $i => $blog) :
+                    ?>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="h5 bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Caméras de surveillance</a>
-                        <a class="h5 bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Système d'alarme</a>
+                        <a class="h5 bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i> <?= $blog["equipements"] ?> </a>
+                        <!-- <a class="h5 bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Système d'alarme</a>
                         <a class="h5 bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Protection contre la malveillance - Contrôle d'accès</a>
                         <a class="h5 bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Enregistreurs télésurveillance</a>
-                        <a class="h5 bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Portes automatique</a>
+                        <a class="h5 bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Portes automatique</a> -->
                     </div>
+                    <?php endforeach; ?>
                 </div>
                 <!-- Category End -->
 

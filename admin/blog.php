@@ -16,25 +16,57 @@ require_once 'layouts/_head.php';
     $success = '<div class="alert alert-success" role="alert">Opération terminée avec <strong>succès</strong></div>';
     $danger = '<div class="alert alert-danger" role="alert"><strong>Erreur</strong> lors de la terminaison de cette opération</div>';
     $date = date('Y-m-d H:i:s'); // Current date
-    // Ajoute php code
+
+    // Add your PHP code
     if (isset($_POST['ajouter'])) {
-        echo ($BlogController->create($_POST['titre'], $_POST['equipements'], $_POST['description'], $date)) ? $success : $danger;
+        if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+            $targetPath = "assets/img/"; // Specify the directory where you want to save the uploaded file
+            $imageName = $_FILES["image"]["name"];
+            $fileExtension = pathinfo($imageName, PATHINFO_EXTENSION);
+            $img = $imageName;
+    
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetPath . $img)) {
+                echo ($BlogController->create($_POST['titre'], $_POST['equipements'], $_POST['description'], $img, $date)) ? $success : $danger;
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        } else {
+            echo "Error: No file uploaded or an error occurred during upload.";
+        }
     }
+
     // Update php code
     if (isset($_POST['update'])) {
         $id = $_POST['update'];
-        echo ($BlogController->update($_POST['titre'], $_POST['equipements'], $_POST['description'], $date, $id)) ? $success : $danger;
+        if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+            $targetPath = "assets/img/"; // Specify the directory where you want to save the uploaded file
+            $imageName = $_FILES["image"]["name"];
+            $fileExtension = pathinfo($imageName, PATHINFO_EXTENSION);
+            $img = $imageName;
+    
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetPath . $img)) {
+                echo ($BlogController->update($_POST['titre'], $_POST['equipements'], $_POST['description'], $img, $date, $id)) ? $success : $danger;
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        } else {
+            echo "Error: No file uploaded or an error occurred during upload.";
+        }
     }
+
     // Delete php code
     if (isset($_POST['delete'])) {
         $id = $_POST['delete'];
         echo ($BlogController->delete($id)) ? $success : $danger;
     }
+
+    
     ?>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Image</th>
                 <th scope="col">Titre</th>
                 <th scope="col">Equipements</th>
                 <th scope="col">Description</th>
@@ -51,6 +83,7 @@ require_once 'layouts/_head.php';
 
                     <tr>
                         <td><?= $blog['id']; ?></td>
+                        <td><img src="assets/img/<?= $blog['avatar'] ; ?>" width="50" height="50" alt=""></td>
                         <td><?= $blog['titre']; ?></td>
                         <!-- Check if "equipements" key exists before accessing it -->
                         <td><?= isset($blog['equipements']) ? $blog['equipements'] : ''; ?></td>
@@ -73,6 +106,7 @@ require_once 'layouts/_head.php';
         <tfoot>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Image</th>
                 <th scope="col">Titre</th>
                 <th scope="col">Equipements</th>
                 <th scope="col">Description</th>
@@ -85,12 +119,16 @@ require_once 'layouts/_head.php';
     <div class="modal fade" id="ajouter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter blog</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter Blog</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="col-form-label">image(*) :</label>
+                                <input type="file" class="form-control" name="image" required>
+                            </div>
                             <div class="mb-3">
                                 <label class="col-form-label">Titre(*) :</label>
                                 <input type="text" class="form-control" name="titre" required>
@@ -120,12 +158,17 @@ require_once 'layouts/_head.php';
     <div class="modal fade" id="update<?= $blog["id"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier Blog</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                    <div class="mb-3">
+                                    <label class="col-form-label">Image(*) :</label>
+                                    <img src="assets/img/<?= $blog['avatar'] ; ?>" width="50" height="50" alt="">
+                                    <input type="file" class="form-control" name="image" value="<?= $blog["avatar"]; ?>" required>
+                                </div>
                             <div class="mb-3">
                                 <label class="col-form-label">Titre(*) :</label>
                                 <input type="text" class="form-control" name="titre" value="<?= $blog["titre"]; ?>" placeholder="<?= $blog["titre"]; ?>" required>
