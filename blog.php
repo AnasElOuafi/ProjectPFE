@@ -10,7 +10,7 @@
         <div class="row g-5">
             <!-- Blog list Start -->
             <div class="col-lg-8">
-                <div class="row g-5">
+                <div class="row g-7">
                     <?php
                     $Allblogs = $BlogController->read();
                     foreach ($Allblogs as $i => $blog) :
@@ -27,20 +27,6 @@
                         </div>
                     </div>
                     <?php endforeach; ?>
-
-                    <div class="col-12 wow slideInUp" data-wow-delay="0.1s">
-                        <nav aria-label="Page navigation">
-                          <ul class="pagination pagination-lg m-0">
-                            <li class="page-item active"><a class="page-link" href="logiciel_de_controle.html">1</a></li>
-                            <li class="page-item"><a class="page-link" href="logiciel_de_controle2.html">2</a></li>
-                            <li class="page-item">
-                              <a class="page-link rounded-0" href="logiciel_de_controle2.html" aria-label="Next">
-                                <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
-                              </a>
-                            </li>
-                          </ul>
-                        </nav>
-                    </div>
                 </div>
             </div>
             <!-- Blog list End -->
@@ -73,35 +59,40 @@
                 </div>
                 <!-- Image End -->
 
-                <!-- Tags Start -->
-                <div class="mb-5">
-                    <h2 class="mb-4">Équipements Essentiels pour une Sécurité Avancée</h2>
-                    <div class="d-flex flex-wrap m-n1">
-                        <a href="" class="btn btn-light m-1">Caméras de surveillance</a>
-                        <a href="" class="btn btn-light m-1">Capteurs de mouvement</a>
-                        <a href="" class="btn btn-light m-1">Panneaux de contrôle </a>
-                        <a href="" class="btn btn-light m-1">Alarmes</a>
-                        <a href="" class="btn btn-light m-1">Systèmes de détection d'intrusion</a>
-                        <a href="" class="btn btn-light m-1">Enregistreurs vidéo (DVR ou NVR)</a>
-                        <a href="" class="btn btn-light m-1">Moniteurs</a>
-                        <a href="" class="btn btn-light m-1">Systèmes d'accès et de contrôle</a>
-                        <a href="" class="btn btn-light m-1">Technologie de communication</a>
-                        <a href="" class="btn btn-light m-1">Stockage en nuage</a>
-                        <a href="" class="btn btn-light m-1">Logiciels de gestion</a>
-                        <a href="" class="btn btn-light m-1">Alimentation de secours</a>
-                    </div>
-                </div>
-                <!-- Tags End -->
+                <!-- Comment Form Start -->
+<div class="bg-light rounded p-5">
+    <?php
+    // Messages
+    $success = '<div class="alert alert-success" role="alert">Opération terminée avec <strong>succès</strong></div>';
+    $danger = '<div class="alert alert-danger" role="alert"><strong>Erreur</strong> lors de la terminaison de cette opération</div>';
+    // Update php code
+    if (isset($_POST['send'])) {
+        echo ($TemoiController->sendCmt($_POST['username'], $_POST['email'], $_POST['comment'])) ? $success : $danger;
+    }
+    ?>
+    <h2 class="mb-4">Laissez votre commentaire</h2>
+    <form method="post" action="">
+        <div class="row g-3">
+            <div class="col-12 col-sm-6">
+                <input type="text" name="username" class="form-control bg-white border-0" placeholder="Votre Nom et Prenom" style="height: 55px;">
+            </div>
+            <div class="col-12 col-sm-6">
+                <input type="email" name="email" class="form-control bg-white border-0" placeholder="Votre E-mail" style="height: 55px;">
+            </div>
 
-                <!-- Plain Text Start 
-                <div>
-                    <h2 class="mb-4">Plain Text</h2>
-                    <div class="bg-light text-center" style="padding: 30px;">
-                        <p>Vero sea et accusam justo dolor accusam lorem consetetur, dolores sit amet sit dolor clita kasd justo, diam accusam no sea ut tempor magna takimata, amet sit et diam dolor ipsum amet diam</p>
-                        <a href="" class="btn btn-primary py-2 px-4">Read More</a>
-                    </div>
-                </div>
-                Plain Text End -->
+            <div class="col-12">
+                <textarea class="form-control bg-white border-0" name="comment" rows="5" placeholder="Commentaire"></textarea>
+            </div>
+            <div class="col-12">
+                <button name="send" class="btn btn-primary w-100 py-3" type="submit">Laissez votre commentaire</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- Comment Form End -->
+
+
+
             </div>
             <!-- Sidebar End -->
         </div>

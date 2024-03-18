@@ -47,14 +47,13 @@ class TemoiController
         if ($result) {return $result;} else {return false;}
     }
     // Update method
-    public function update($username, $email, $password, $comment, $userID)
+    public function update($username, $email, $comment, $userID)
     {        
         // addslashes is a method to clean the text written by the user
         $username = addslashes($username);
         $email = addslashes($email);
-        $password = md5($password);
         // Start request SQL to update
-        $query = mysqli_query($this->db, "UPDATE `comment` SET `username`='{$username}',`email`='{$email}',`password`='{$password}', `comment`='{$comment}' WHERE `userID` = '{$userID}'");
+        $query = mysqli_query($this->db, "UPDATE `comment` SET `username`='{$username}',`email`='{$email}', `comment`='{$comment}' WHERE `userID` = '{$userID}'");
         // Test on $query if it ran successfully or not to return the right boolean value
         if ($query) {return true;} else {return false;}
     }
@@ -68,15 +67,27 @@ class TemoiController
        if ($query) {return true;} else {return false;}
    }
    // Create method
-   public function create($username, $email, $password, $comment)
+   public function create($username, $email, $comment)
    {
        // addslashes is a method to clean the text written by the user
        $username = addslashes($username);
        $email = addslashes($email);
-       $password = md5($password);
        // Start request SQL to create a service
-       $query = mysqli_query($this->db, "INSERT INTO `comment`(`username`, `email`, `password`, `comment`) VALUES ('{$username}', '{$email}', '{$password}', '{$comment}')");
+       $query = mysqli_query($this->db, "INSERT INTO `comment`(`username`, `email`, `comment`) VALUES ('{$username}', '{$email}', '{$comment}')");
        // Test on $query if it ran successfully or not to return the right boolean value
        if ($query) {return true;} else {return false;}
    }
+
+
+   public function sendCmt($username, $email, $comment)
+   {
+       // addslashes is a method to clean the text written by the user
+       $username = addslashes($username);
+       $comment = addslashes($comment);
+       // Start request SQL to create a service
+       $query = mysqli_query($this->db, "INSERT INTO `comment`(`username`, `email`, `comment`) VALUES ('$username', '$email', '$comment')");
+       // Test on $query if it ran successfully or not to return the right boolean value
+       if ($query) {return true;} else {return false;}
+   }
+
 }

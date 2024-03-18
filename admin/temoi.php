@@ -17,12 +17,12 @@ require_once 'layouts/_head.php';
     $danger = '<div class="alert alert-danger" role="alert"><strong>Erreur</strong> lors de la terminaison de cette opération</div>';
     // Ajpute php code
     if (isset($_POST['ajouter'])) {
-        echo ($TemoiController->create($_POST['username'], $_POST['email'], $_POST['password'], $_POST['comment'])) ? $success : $danger;
+        echo ($TemoiController->create($_POST['username'], $_POST['email'], $_POST['comment'])) ? $success : $danger;
     }
     // Update php code
     if (isset($_POST['update'])) {
         $userID = $_POST['update'];
-        echo ($TemoiController->update($_POST['username'], $_POST['email'], $_POST['password'], $_POST['comment'], $userID)) ? $success : $danger;
+        echo ($TemoiController->update($_POST['username'], $_POST['email'], $_POST['comment'], $userID)) ? $success : $danger;
     }
     // Delete php code
     if (isset($_POST['delete'])) {
@@ -36,7 +36,6 @@ require_once 'layouts/_head.php';
                 <th scope="col">#</th>
                 <th scope="col">UserID</th>
                 <th scope="col">Email</th>
-                <th scope="col">Password</th>
                 <th scope="col">Commantaire</th>
                 <th scope="col">Actions</th>
             </tr>
@@ -52,7 +51,6 @@ require_once 'layouts/_head.php';
                         <td><?= $Temoi['userID']; ?></td>
                         <td><?= $Temoi['username']; ?></td>
                         <td><?= $Temoi['email']; ?></td>
-                        <td><?= $Temoi['password']; ?></td>
                         <td><?= $Temoi['comment']; ?></td>
                         <td>
                             <form method="post">
@@ -72,7 +70,6 @@ require_once 'layouts/_head.php';
                 <th scope="col">#</th>
                 <th scope="col">UserID</th>
                 <th scope="col">Email</th>
-                <th scope="col">Password</th>
                 <th scope="col">Commantaire	</th>
                 <th scope="col">Actions</th>
             </tr>
@@ -96,10 +93,7 @@ require_once 'layouts/_head.php';
                                 <label class="col-form-label">Email(*) :</label>
                                 <input type="email" class="form-control" name="email" required>
                             </div>
-                            <div class="mb-3">
-                                <label class="col-form-label">Password(*) :</label>
-                                <input type="password" class="form-control" name="password" required>
-                            </div>
+                            
                             <div class="mb-3">
                                 <label class="col-form-label">Commantaire(*) :</label>
                                 <textarea type="text" class="form-control" name="comment" required></textarea>
@@ -134,10 +128,6 @@ require_once 'layouts/_head.php';
                                 <div class="mb-3">
                                     <label class="col-form-label">Email(*) :</label>
                                     <input type="email" class="form-control" name="email" value="<?= $Temoi["email"]; ?>" placeholder="<?= $Temoi["email"]; ?>" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label">Password(*) :</label>
-                                    <input type="password" class="form-control" name="password" value="<?= $Temoi["password"]; ?>" placeholder="<?= $Temoi["password"]; ?>" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="col-form-label">Commantaire(*) :</label>

@@ -100,38 +100,38 @@ require_once 'layouts/_head.php';
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="col-form-label">titre(*) :</label>
-                                <input type="text" class="form-control" name="titre" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="col-form-label">prix(*) :</label>
-                                <input type="text" class="form-control" name="prix" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="col-form-label">period(*) :</label>
-                                <input type="text" class="form-control" name="period" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="col-form-label">line1(*) :</label>
-                                <textarea type="text" class="form-control" name="line1" required></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="col-form-label">line2(*) :</label>
-                                <textarea type="text" class="form-control" name="line2" required></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="col-form-label">line3(*) :</label>
-                                <textarea type="text" class="form-control" name="line3" required></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="col-form-label">line4(*) :</label>
-                                <textarea type="text" class="form-control" name="line4" required></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="col-form-label">line5(*) :</label>
-                                <textarea type="text" class="form-control" name="line5" required></textarea>
-                            </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">titre(*) :</label>
+                            <input type="text" class="form-control" name="titre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">prix(*) :</label>
+                            <input type="text" class="form-control" name="prix" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">period(*) :</label>
+                            <input type="text" class="form-control" name="period" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">line1(*) :</label>
+                            <textarea type="text" class="form-control" name="line1" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">line2(*) :</label>
+                            <textarea type="text" class="form-control" name="line2" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">line3(*) :</label>
+                            <textarea type="text" class="form-control" name="line3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">line4(*) :</label>
+                            <textarea type="text" class="form-control" name="line4" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">line5(*) :</label>
+                            <textarea type="text" class="form-control" name="line5" required></textarea>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" name="ajouter" class="btn btn-outline-success">Ajouter</button>
@@ -155,38 +155,38 @@ require_once 'layouts/_head.php';
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                                <div class="mb-3">
-                                    <label class="col-form-label">titre(*) :</label>
-                                    <input type="text" class="form-control" name="titre" value="<?= $packs["titre"]; ?>" placeholder="<?= $packs["titre"]; ?>" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label">prix(*) :</label>
-                                    <input type="text" class="form-control" name="prix" value="<?= $packs["prix"]; ?>" placeholder="<?= $packs["prix"]; ?>" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label">period(*) :</label>
-                                    <input type="text" class="form-control" name="period" value="<?= $packs["period"]; ?>" placeholder="<?= $packs["period"]; ?>" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label">line1(*) :</label>
-                                    <textarea type="text" class="form-control" name="line1" value="<?= $packs["line1"]; ?>" placeholder="<?= $packs["line1"]; ?>" required><?= $packs["line1"]; ?></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label">line2(*) :</label>
-                                    <textarea type="text" class="form-control" name="line2" value="<?= isset($packs["line2"]) ? $packs["line2"] : ''; ?>" placeholder="<?= isset($packs["line2"]) ? $packs["line2"] : ''; ?>" required><?= isset($packs["line2"]) ? $packs["line2"] : ''; ?></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label">line3(*) :</label>
-                                    <textarea type="text" class="form-control" name="line3" value="<?= isset($packs["line3"]) ? $packs["line3"] : ''; ?>" placeholder="<?= isset($packs["line3"]) ? $packs["line3"] : ''; ?>" required><?= isset($packs["line3"]) ? $packs["line3"] : ''; ?></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label">line4(*) :</label>
-                                    <textarea type="text" class="form-control" name="line4" value="<?= isset($packs["line4"]) ? $packs["line4"] : ''; ?>" placeholder="<?= isset($packs["line4"]) ? $packs["line4"] : ''; ?>" required><?= isset($packs["line4"]) ? $packs["line4"] : ''; ?></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="col-form-label">line5(*) :</label>
-                                    <textarea type="text" class="form-control" name="line5" value="<?= isset($packs["line5"]) ? $packs["line5"] : ''; ?>" placeholder="<?= isset($packs["line5"]) ? $packs["line5"] : ''; ?>" required><?= isset($packs["line5"]) ? $packs["line5"] : ''; ?></textarea>
-                                </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">titre(*) :</label>
+                                <input type="text" class="form-control" name="titre" value="<?= $packs["titre"]; ?>" placeholder="<?= $packs["titre"]; ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">prix(*) :</label>
+                                <input type="text" class="form-control" name="prix" value="<?= $packs["prix"]; ?>" placeholder="<?= $packs["prix"]; ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">period(*) :</label>
+                                <input type="text" class="form-control" name="period" value="<?= $packs["period"]; ?>" placeholder="<?= $packs["period"]; ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">line1(*) :</label>
+                                <textarea type="text" class="form-control" name="line1" value="<?= $packs["line1"]; ?>" placeholder="<?= $packs["line1"]; ?>" required><?= $packs["line1"]; ?></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">line2(*) :</label>
+                                <textarea type="text" class="form-control" name="line2" value="<?= isset($packs["line2"]) ? $packs["line2"] : ''; ?>" placeholder="<?= isset($packs["line2"]) ? $packs["line2"] : ''; ?>" required><?= isset($packs["line2"]) ? $packs["line2"] : ''; ?></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">line3(*) :</label>
+                                <textarea type="text" class="form-control" name="line3" value="<?= isset($packs["line3"]) ? $packs["line3"] : ''; ?>" placeholder="<?= isset($packs["line3"]) ? $packs["line3"] : ''; ?>" required><?= isset($packs["line3"]) ? $packs["line3"] : ''; ?></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">line4(*) :</label>
+                                <textarea type="text" class="form-control" name="line4" value="<?= isset($packs["line4"]) ? $packs["line4"] : ''; ?>" placeholder="<?= isset($packs["line4"]) ? $packs["line4"] : ''; ?>" required><?= isset($packs["line4"]) ? $packs["line4"] : ''; ?></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">line5(*) :</label>
+                                <textarea type="text" class="form-control" name="line5" value="<?= isset($packs["line5"]) ? $packs["line5"] : ''; ?>" placeholder="<?= isset($packs["line5"]) ? $packs["line5"] : ''; ?>" required><?= isset($packs["line5"]) ? $packs["line5"] : ''; ?></textarea>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="submit" name="update" value="<?= $packs["id"]; ?>" class="btn btn-outline-success">Modifier</button>
